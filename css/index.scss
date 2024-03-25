@@ -1,6 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+
 body {
     width: 100vw;
     height: 100vh;
+    margin: none;
+    padding: none;
+    background-color: gray;
+
+    font-family: "Comfortaa", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+
 }
 
 #audio-start-screen {
@@ -12,24 +24,34 @@ body {
 }
 
 #content-wrapper {
+
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: cyan;
+    max-width: 42rem;
     height: 50%;
     width: 50%;
-    position: absolute;
+    position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border-radius: 50px;
-}
-
-#banner-wrapper {
-
+    border-radius: 1rem;
+    #banner-wrapper {
+        position: absolute;
+        top: 0;
+        width: 100%; 
+        background-color: blue;
+        height: 30%;
+        border-radius: 1rem 1rem 0 0;
+    }
 }
 
 #profile-picture {
-    width: 15%;
+    width: 7rem;
     border-radius: 100px;
+}
+
+#audio-player {
+    display: none;
 }

@@ -20,17 +20,35 @@ document.addEventListener("DOMContentLoaded", () => {
     let audio_player = document.getElementById("audio-player");
     let play_pause = document.getElementById("play-pause");
     let audio_confirm = document.getElementById("audio-start-screen");
+    let progress_bar = document.getElementById("audio-progress")
 
+    // playing audio requires it to be muted, or have user input
     audio_confirm.addEventListener("click", () => {
         audio_confirm.style.display = "none";
         audio_player.play();
+        
+    });
+    play_pause.addEventListener("click", () => {
+        console.log()
+        if (audio_player.paused) {
+            audio_player.play();
+        } else {
+            audio_player.pause();
+        }
+
     });
 
-    play_pause.addEventListener("click", () => {
+    audio_player.addEventListener("loadedmetadata", () => {
+        var duration = audio_player.duration;
+        var current_time = audio_player.currentTime;
+        progress_bar.max = duration;
+        progress_bar.value = 0;
+    });
 
+    audio_player.addEventListener("timeupdate", () => {
+        progress_bar.value = audio_player.currentTime;
     });
     
-    // document.title = "se";
     animate_title()
 
 });

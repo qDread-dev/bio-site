@@ -8,7 +8,7 @@
     </head>
     <body>
         <div id="audio-start-screen">
-            <p>click to play</p>
+            <p>click</p>
         </div>
         
         <div id="content-wrapper">
@@ -16,10 +16,14 @@
                 <p>test</p>
             </div>
             <img id="profile-picture" src="./assets/profile.png" alt="">
+            <div id="user-info">
+                <p>qdread</p>
+            </div>
             <div id="audio-wrapper">
                 <audio id="audio-player" controls autoplay>
                     <source src="./assets/Mayonaka no Door.mp3">
                 </audio>
+                <progress id="audio-progress"></progress>
                 <a id="play-pause" href="#">playpause</a>
             </div>
         </div>
