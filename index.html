@@ -31,7 +31,10 @@
                     </audio>
                     <p style="padding-top: 1rem;">Mayonaka no Door</p>
                     <span id="current-time">0:00</span>
-                    <progress id="audio-progress"></progress>
+                    <!-- <progress id="audio-progress"></progress> -->
+                    
+                    <input type="range" min="0" max="100" value="0" class="slider" id="audio-progress">
+
                     <span id="duration">0:00</span>
                     <a id="play-pause" href="#"><span class="material-symbols-outlined" id="play-pause-text">pause</span></a>
                 </div>
@@ -43,7 +46,7 @@
         <script>
             // import VanillaTilt from "vanilla-tilt";
             VanillaTilt.init(document.querySelector("#content-wrapper"), {
-                max: 10,
+                max: 5,
                 speed: 400,
                 reverse: "true"
             });

@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let play_pause = document.getElementById("play-pause");
     let audio_confirm = document.getElementById("audio-start-screen");
     let progress_bar = document.getElementById("audio-progress")
+    var is_dragging = false;
 
     // playing audio requires it to be muted, or have user input
     audio_confirm.addEventListener("click", () => {
@@ -50,18 +51,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
+    
+
+    progress_bar.addEventListener("mousedown", () => {
+        is_dragging = true;
+    });
+
+    progress_bar.addEventListener("mouseup", () => {
+        is_dragging = false;
+    });
+
     audio_player.addEventListener("loadedmetadata", () => {
         var duration = audio_player.duration;
         progress_bar.max = duration;
         progress_bar.value = 0;
         document.getElementById("duration").innerText = convert_time(duration);
-        console.log(convert_time(duration))
-        
     });
 
     audio_player.addEventListener("timeupdate", () => {
-        progress_bar.value = audio_player.currentTime;
+        if (!is_dragging) {
+            progress_bar.value = audio_player.currentTime;
+        }
         document.getElementById("current-time").innerText = convert_time(audio_player.currentTime);   
+    });
+
+    progress_bar.addEventListener("change", () => {
+        audio_player.currentTime = progress_bar.value;
     });
 
     particlesJS.load('particles-js', './assets/particles.json', function() {
