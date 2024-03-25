@@ -24,9 +24,7 @@ function convert_time(inSeconds) {
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    particlesJS.load('particles-js', './assets/particles.json', function() {
-        console.log('callback - particles.js config loaded');
-    });
+    
 
     // will be playing on click
     let audio_player = document.getElementById("audio-player");
@@ -66,6 +64,9 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById("current-time").innerText = convert_time(audio_player.currentTime);   
     });
 
+    particlesJS.load('particles-js', './assets/particles.json', function() {
+        console.log('callback - particles.js config loaded');
+    });
     
     
     animate_title()
