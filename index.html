@@ -5,28 +5,47 @@
         <link rel="stylesheet" href="./css/index.css">
         <script src="./js/index.js"></script>
 
+        <!-- Material icons my beloved -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
     </head>
     <body>
         <div id="audio-start-screen">
             <p>click</p>
         </div>
         
+        <div id="particles-js" style="position:absolute; z-index: -1;"></div>
+
         <div id="content-wrapper">
             <div id="banner-wrapper">
-                <p>test</p>
             </div>
-            <img id="profile-picture" src="./assets/profile.png" alt="">
-            <div id="user-info">
-                <p>qdread</p>
+            <div id="info-wrapper">
+                
+                <div id="user-info">
+                <img id="profile-picture" src="./assets/profile.png" alt="">
+                    <p>qdread</p>
+                </div>
+                <div id="audio-wrapper">
+                    <audio id="audio-player" controls autoplay>
+                        <source src="./assets/Mayonaka no Door.mp3">
+                    </audio>
+                    <p style="padding-top: 1rem;">Mayonaka no Door</p>
+                    <span id="current-time">0:00</span>
+                    <progress id="audio-progress"></progress>
+                    <span id="duration">0:00</span>
+                    <a id="play-pause" href="#"><span class="material-symbols-outlined" id="play-pause-text">pause</span></a>
+                </div>
+                </div>
             </div>
-            <div id="audio-wrapper">
-                <audio id="audio-player" controls autoplay>
-                    <source src="./assets/Mayonaka no Door.mp3">
-                </audio>
-                <progress id="audio-progress"></progress>
-                <a id="play-pause" href="#">playpause</a>
-            </div>
-        </div>
 
+        <script src="./node_modules/particles.js/particles.js"></script>
+        <script type="text/javascript" src="./node_modules/vanilla-tilt/dist/vanilla-tilt.js"></script>
+        <script>
+            VanillaTilt.init(document.querySelector("#content-wrapper"), {
+                max: 10,
+                speed: 400,
+                reverse: "true"
+            });
+        </script>
     </body>
 </html>

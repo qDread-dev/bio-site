@@ -11,10 +11,21 @@ async function animate_title() {
     }
 }
 
+function convert_time(inSeconds) {
+    var seconds = Math.floor(inSeconds % 60);
+    if (seconds < 10) {
+        seconds = "0"+seconds
+    }
+    var minutes = Math.floor(inSeconds / 60);
+    return minutes+":"+seconds
+}
+
+
 document.addEventListener("DOMContentLoaded", () => {
 
-
-
+    particlesJS.load('particles-js', '../assets/particles.json', function() {
+        console.log('callback - particles.js config loaded');
+    });
 
     // will be playing on click
     let audio_player = document.getElementById("audio-player");
@@ -32,22 +43,29 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log()
         if (audio_player.paused) {
             audio_player.play();
+            document.getElementById("play-pause-text").innerText = "pause";
         } else {
             audio_player.pause();
+            document.getElementById("play-pause-text").innerText = "play_arrow";
         }
 
     });
 
     audio_player.addEventListener("loadedmetadata", () => {
         var duration = audio_player.duration;
-        var current_time = audio_player.currentTime;
         progress_bar.max = duration;
         progress_bar.value = 0;
+        document.getElementById("duration").innerText = convert_time(duration);
+        console.log(convert_time(duration))
+        
     });
 
     audio_player.addEventListener("timeupdate", () => {
         progress_bar.value = audio_player.currentTime;
+        document.getElementById("current-time").innerText = convert_time(audio_player.currentTime);   
     });
+
+    
     
     animate_title()
 
