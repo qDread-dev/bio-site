@@ -24,7 +24,7 @@ function convert_time(inSeconds) {
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    
+
 
     // will be playing on click
     let audio_player = document.getElementById("audio-player");
@@ -84,6 +84,5 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     
     
-    animate_title()
-
 });
+animate_title()
