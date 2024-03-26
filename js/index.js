@@ -66,6 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
         progress_bar.max = duration;
         progress_bar.value = 0;
         document.getElementById("duration").innerText = convert_time(duration);
+        document.getElementById("audio-start-text").innerText = "click";
     });
 
     audio_player.addEventListener("timeupdate", () => {

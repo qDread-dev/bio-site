@@ -62,7 +62,7 @@ body {
         position: relative;
         #user-info {
             position: relative;
-            top:-3.5rem; // Adjust this value as needed
+            top:-3.5rem;
             p {
                 font-size: 2rem;
                 font-weight: 600;
@@ -70,9 +70,9 @@ body {
         }
         #profile-picture {
             position: absolute;
-            top: -3.5rem; // Adjust this value as needed
+            top: -3.5rem;
             left: 50%;
-            transform: translateX(-50%); // To center the image horizontally
+            transform: translateX(-50%);
             width: 7rem;
             border-radius: 100px;   
         }
@@ -87,7 +87,6 @@ body {
 
 
 #audio-wrapper {
-    // align-self: flex-end;
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -118,9 +117,9 @@ body {
     appearance: none;
     width: 100%;
     height: 25px;
-    background: transparent; /* Make the background transparent */
+    background: transparent; 
     outline: none;
-    position: relative; /* Add this line */
+    position: relative;
 }
 
 .slider::before {
@@ -132,8 +131,8 @@ body {
     height: 100%;
     border-radius: 50px;
     background: #d3d3d3;
-    z-index: -1; /* Place this below the actual slider */
-    overflow: hidden; /* Hide the overflow */
+    z-index: -1;
+    overflow: hidden;
 }
 
 .slider::-webkit-slider-thumb {
