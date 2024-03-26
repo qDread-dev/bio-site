@@ -100,6 +100,13 @@ body {
         vertical-align: middle;
     }    
 }
+#play-pause {
+    color: white;
+
+    &:visited {
+        color: inherit;
+    }
+}
 
 #play-pause-text {
     font-size: 2rem;

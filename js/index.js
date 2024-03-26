@@ -35,12 +35,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // playing audio requires it to be muted, or have user input
     audio_confirm.addEventListener("click", () => {
+        audio_player.muted = false;
         audio_confirm.style.display = "none";
         audio_player.play();
         
     });
     play_pause.addEventListener("click", () => {
-        console.log()
         if (audio_player.paused) {
             audio_player.play();
             document.getElementById("play-pause-text").innerText = "pause";
@@ -84,6 +84,18 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log('callback - particles.js config loaded');
     });
     
+    document.addEventListener("keydown", (event) => {
+        if (event.isComposing || event.key == " ") {
+            if (audio_player.paused) {
+                audio_player.play();
+                document.getElementById("play-pause-text").innerText = "pause";
+            } else {
+                audio_player.pause();
+                document.getElementById("play-pause-text").innerText = "play_arrow";
+            }
+        };
+        console.log(event.key);
+    });
     
 });
 animate_title()

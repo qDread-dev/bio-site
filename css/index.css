@@ -87,6 +87,13 @@ body {
   vertical-align: middle;
 }
 
+#play-pause {
+  color: white;
+}
+#play-pause:visited {
+  color: inherit;
+}
+
 #play-pause-text {
   font-size: 2rem;
   padding: none;
@@ -103,9 +110,9 @@ body {
   appearance: none;
   width: 100%;
   height: 25px;
-  background: transparent; /* Make the background transparent */
+  background: transparent;
   outline: none;
-  position: relative; /* Add this line */
+  position: relative;
 }
 
 .slider::before {
@@ -117,8 +124,8 @@ body {
   height: 100%;
   border-radius: 50px;
   background: #d3d3d3;
-  z-index: -1; /* Place this below the actual slider */
-  overflow: hidden; /* Hide the overflow */
+  z-index: -1;
+  overflow: hidden;
 }
 
 .slider::-webkit-slider-thumb {
