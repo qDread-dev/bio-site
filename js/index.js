@@ -39,7 +39,10 @@ document.addEventListener("DOMContentLoaded", () => {
     let audio_player = document.getElementById("audio-player");
     let play_pause = document.getElementById("play-pause");
     let audio_confirm = document.getElementById("audio-start-screen");
-    let progress_bar = document.getElementById("audio-progress")
+    let progress_bar = document.getElementById("audio-progress");
+    // the actual icon
+    let volume_button = document.getElementById("volume-control-text");
+    var volume_slider = document.getElementById('volume-slider');
     var is_dragging = false;
 
     // playing audio requires it to be muted, or have user input
@@ -92,6 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
     particlesJS.load('particles-js', './assets/particles.json', function() {
         console.log('callback - particles.js config loaded');
     });
+
     
     document.addEventListener("keydown", (event) => {
         if (event.isComposing || event.key == " ") {
@@ -104,6 +108,40 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         };
     }); 
+
+
+    volume_button.addEventListener("click", () => {
+        audio_player.muted = !audio_player.muted;
+        if (audio_player.muted == true) {
+            volume_button.innerText = "volume_off";
+        } else {
+            if (parseFloat(volume_slider.value) > .50) {
+                volume_button.innerText = "volume_up";
+            } else if (parseFloat(volume_slider.value) <= .5) {
+                volume_button.innerText = "volume_down";
+            }
+            if (parseFloat(volume_slider.value) == 0) {
+                volume_button.innerText = "volume_off";
+            }
+        }
+    });
+
+
+    volume_slider.addEventListener('input', function() {
+        audio_player.volume = volume_slider.value;
+
+        if (parseFloat(volume_slider.value) > .50) {
+            volume_button.innerText = "volume_up";
+        } else if (parseFloat(volume_slider.value) <= .5) {
+            volume_button.innerText = "volume_down";
+        }
+        if (parseFloat(volume_slider.value) == 0) {
+            volume_button.innerText = "volume_off";
+        }
+        
+    });
+
+
 });
 if (!window.mobileCheck()) {
     animate_title()

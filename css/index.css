@@ -12,6 +12,7 @@ body {
   font-weight: 300;
   font-style: normal;
   overflow: hidden;
+  user-select: none;
 }
 
 #audio-start-screen {
@@ -83,22 +84,54 @@ body {
 }
 #audio-wrapper #audio-progress {
   height: 1rem;
-  width: 60%;
+  width: 55%;
   vertical-align: middle;
 }
-
-#play-pause {
+#audio-wrapper a {
   color: white;
 }
-#play-pause:visited {
-  color: inherit;
-}
-
-#play-pause-text {
+#audio-wrapper a span {
   font-size: 2rem;
   padding: none;
   vertical-align: middle;
   line-height: 1.6;
+}
+#audio-wrapper a:visited {
+  color: inherit;
+}
+
+#audio-controls {
+  position: relative; /* Create a new stacking context */
+}
+
+#volume-button {
+  position: relative; /* Create a new stacking context */
+  padding-bottom: 10px; /* Add padding to the bottom of the volume button */
+}
+
+#volume-button:hover * {
+  visibility: visible; /* Show the volume slider when hovering over the volume button or the slider itself */
+}
+
+#volume-wrapper {
+  visibility: hidden; /* Hide the volume slider by default */
+  position: absolute;
+  bottom: 150%; /* Position it further above the volume button */
+  left: 50%; /* Move the left edge to the center of the volume button */
+  transform: translateX(-55%); /* Align it with the left edge of the volume button */
+  height: 200%;
+  width: 50px;
+}
+
+#volume-slider {
+  position: absolute;
+  bottom: 10%; /* Position it at the very top of its parent element */
+  left: 0; /* Align it with the left edge of its parent element */
+  width: 100%; /* Take up the full width of its parent element */
+  height: 100%;
+}
+#volume-slider::-moz-range-thumb {
+  visibility: hidden;
 }
 
 #particles-js {
