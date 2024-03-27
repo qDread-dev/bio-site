@@ -129,7 +129,7 @@ body {
   position: absolute;
   outline: none;
   appearance: none;
-  bottom: 10%; /* Position it at the very top of its parent element */
+  bottom: 10%;
   left: 0; /* Align it with the left edge of its parent element */
   width: 100%; /* Take up the full width of its parent element */
   height: 100%;
@@ -148,15 +148,16 @@ body {
 }
 #volume-slider::-moz-range-track {
   width: 5px;
-  background-color: gray;
+  background-color: #d3d3d3;
   appearance: none;
   border-radius: 999px;
 }
 #volume-slider::-moz-range-thumb {
   appearance: none;
+  border-color: transparent;
 }
 #volume-slider::-moz-range-progress {
-  background: #aeaeae;
+  background: #d3d3d3;
   border-radius: 50px;
   height: 5px;
 }
