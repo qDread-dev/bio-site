@@ -107,6 +107,7 @@ body {
 #volume-button {
   position: relative; /* Create a new stacking context */
   padding-bottom: 10px; /* Add padding to the bottom of the volume button */
+  text-decoration: none; /* Remove the underline from the link */
 }
 
 #volume-button:hover * {
