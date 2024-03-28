@@ -107,7 +107,23 @@ document.addEventListener("DOMContentLoaded", () => {
                 document.getElementById("play-pause-text").innerText = "play_arrow";
             }
         };
+        if (event.isComposing || event.key == "m") {
+            audio_player.muted = !audio_player.muted;
+        if (audio_player.muted == true) {
+            volume_button.innerText = "volume_off";
+        } else {
+            if (parseFloat(volume_slider.value) > .50) {
+                volume_button.innerText = "volume_up";
+            } else if (parseFloat(volume_slider.value) <= .5) {
+                volume_button.innerText = "volume_down";
+            }
+            if (parseFloat(volume_slider.value) == 0) {
+                volume_button.innerText = "volume_off";
+            }
+        }
+        }
     }); 
+    
 
 
     volume_button.addEventListener("click", () => {

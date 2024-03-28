@@ -41,6 +41,7 @@ body {
     display: flex;
     flex-direction: column;
     backdrop-filter: blur(5px);
+    max-height: 50rem;
 
 
     #banner-wrapper {
@@ -273,3 +274,4 @@ body {
     }
 
 }
+
