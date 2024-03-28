@@ -76,7 +76,8 @@ body {
             left: 50%;
             transform: translateX(-50%);
             width: 7rem;
-            border-radius: 100px;   
+            border-radius: 999px;   
+            border-width: 5px;
         }
     }
 }

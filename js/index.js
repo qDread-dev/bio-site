@@ -45,6 +45,8 @@ document.addEventListener("DOMContentLoaded", () => {
     var volume_slider = document.getElementById('volume-slider');
     var is_dragging = false;
 
+    
+
     // playing audio requires it to be muted, or have user input
     audio_confirm.addEventListener("click", () => {
         audio_player.muted = false;
