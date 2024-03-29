@@ -134,6 +134,7 @@ body {
   left: 0; /* Align it with the left edge of its parent element */
   width: 100%; /* Take up the full width of its parent element */
   height: 100%;
+  -webkit-appearance: slider-vertical;
 }
 #volume-slider::before {
   content: "";
