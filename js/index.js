@@ -33,8 +33,6 @@ window.mobileCheck = function() {
 
 document.addEventListener("DOMContentLoaded", () => {
 
-
-
     // will be playing on click
     let audio_player = document.getElementById("audio-player");
     let play_pause = document.getElementById("play-pause");

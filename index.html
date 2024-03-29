@@ -11,6 +11,10 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" />
     </head>
     <body>
+        <noscript style="position:fixed; z-index: 11; width: 100vw; height: 100vh; color:white; background-color: black;">
+            <h1>JavaScript is disabled</h1>
+            <p>This site requires JavaScript to run</p>
+        </noscript>
         <div id="audio-start-screen">
             <!-- changes to "click" with js after loading is done -->
             <p id="audio-start-text">loading audio</p>
@@ -19,7 +23,13 @@
         <div id="particles-js" style="position:absolute; z-index: -1;"></div>
 
         <div id="content-wrapper">
+            
             <div id="banner-wrapper">
+                <div id="banner-wrapper">
+                    <video id="banner-video" autoplay muted loop>
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
             </div>
             <div id="info-wrapper">
                 <img id="profile-picture" src="./assets/profile.png" alt="">
